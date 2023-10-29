@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E Complaint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+nav {
+  position: fixed;
+  padding: 25px 60px;
+  z-index: 1;
+}
+
+nav a img {
+  width: 167px;
+}
+
+.wave {
+    background: #003366a2;
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 400%;
+    height: 20%;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+.form-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 4px;
+  padding: 70px;
+  width: 450px;
+  transform: translate(-50%, -50%);
+  background: rgba(240, 240, 240, 0.75);
+}
+
+.form-wrapper h2 {
+  color: #003366;
+  font-size: 2rem;
+}
+
+.form-wrapper form {
+  margin: 25px 0 65px;
+}
+
+form .form-control {
+  height: 50px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form-control input {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+
+.form-control input:is(:focus, :valid) {
+  background: #4444442f;
+  padding: 16px 20px 0;
+}
+
+.form-control label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem;
+  transform: translateY(-130%);
+}
+
+form button {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  background: #003366;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 25px 0 10px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+form button:hover {
+  background: #00336663;
+}
+
+.form-wrapper a {
+  text-decoration: none;
+}
+
+.form-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+  color: #b3b3b3;
+}
+
+form .form-help {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .remember-me {
+  display: flex;
+}
+
+form .remember-me input {
+  margin-right: 5px;
+  accent-color: #b3b3b3;
+}
+
+form .form-help :where(label, a) {
+  font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+  color: #fff;
+}
+
+.form-wrapper small {
+  display: block;
+  margin-top: 15px;
+  color: #b3b3b3;
+}
+
+.form-wrapper small a {
+  color: #0071eb;
+}
+
+@media (max-width: 740px) {
+  body::before {
+    display: none;
+  }
+
+  nav,
+  .form-wrapper {
+    padding: 20px;
+  }
+
+  nav a img {
+    width: 140px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    top: 43%;
+  }
+
+  .form-wrapper form {
+    margin: 25px 0 40px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#"><img src="Style/LOGIN ECOMPLAINT.png" alt="logo"></a>
+  </nav>
+  <div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+ </div>
+  <div class="form-wrapper">
+    <h2>Sign In</h2>
+    <form action="#">
+      <div class="form-control">
+        <input type="text" required>
+        <label>Email or phone number</label>
+      </div>
+      <div class="form-control">
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+      <button type="submit">Sign In</button>
+      <div class="form-help">
+        <div class="remember-me">
+          <input type="checkbox" id="remember-me">
+          <label for="remember-me">Remember me</label>
+        </div>
+        <a href="#">Need help?</a>
+      </div>
+    </form>
+    <small>
+      This page is protected by Google reCAPTCHA to ensure you're not a bot.
+      <a href="#">Learn more.</a>
+    </small>
+  </div>
+</body>
+</html>
